@@ -1,6 +1,6 @@
 import { Particles } from "~/components/landing/Particles";
 import { Link } from "@remix-run/react";
-import Balancer from "react-wrap-balancer";
+import ReactWrapBalancer from "~/components/WrapBalancer";
 import { ArrowRight } from "lucide-react";
 
 export const Hero: React.FC = () => {
@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
               className="pb-4 font-extrabold tracking-tight text-transparent text-7xl lg:text-8xl bg-clip-text bg-gradient-to-r from-zinc-200/60 via-zinc-200 to-zinc-200/60"
               data-aos="fade-down"
             >
-              <Balancer>AI-Powered Notes and To-Dos</Balancer>
+              <ReactWrapBalancer>AI-Powered Notes and To-Dos</ReactWrapBalancer>
             </h1>
             <p
               className="mb-8 text-lg text-zinc-300"
