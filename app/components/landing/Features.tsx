@@ -1,7 +1,9 @@
-import React from "react";
+import {} from "lucide-react";
 
-const Features = () => {
-  return <div>Features</div>;
+export const Features: React.FC = () => {
+  return (
+    <section>
+      <div></div>
+    </section>
+  );
 };
-
-export default Features;
