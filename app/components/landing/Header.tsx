@@ -17,7 +17,7 @@ export const Header: React.FC = () => {
               <li>
                 <Link
                   to="/dashboard"
-                  className="text-sm font-medium text-zinc-300 hover:text-white duration-500"
+                  className="text-sm font-medium text-zinc-200 hover:text-white duration-500"
                 >
                   Sign in
                 </Link>

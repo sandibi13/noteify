@@ -39,7 +39,7 @@ export const Hero: React.FC = () => {
             <p
               className="mb-8 text-lg text-zinc-300"
               data-aos="fade-down"
-              data-aos-delay="400"
+              data-aos-delay="200"
             >
               Boost your productivity with intelligent organization and
               reminders
