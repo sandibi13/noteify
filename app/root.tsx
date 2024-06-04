@@ -6,10 +6,17 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import type {
+  LinksFunction,
+  MetaFunction,
+  LoaderFunction,
+} from "@remix-run/node";
 import stylesheet from "~/tailwind.css?url";
 
 import { ThemeProvider } from "~/components/ThemeProvider";
+
+import { rootAuthLoader } from "@clerk/remix/ssr.server";
+import { ClerkApp } from "@clerk/remix";
 
 export const meta: MetaFunction = () => {
   return [
@@ -21,6 +28,8 @@ export const meta: MetaFunction = () => {
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
 ];
+
+export const loader: LoaderFunction = (args) => rootAuthLoader(args);
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -42,6 +51,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function App() {
+function App() {
   return <Outlet />;
 }
+
+export default ClerkApp(App);

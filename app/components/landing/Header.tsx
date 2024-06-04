@@ -16,7 +16,7 @@ export const Header: React.FC = () => {
             <ul className="flex flex-wrap items-center justify-end grow">
               <li>
                 <Link
-                  to="/dashboard"
+                  to="/sign-in"
                   className="text-sm font-medium text-zinc-200 hover:text-white duration-500"
                 >
                   Sign in
