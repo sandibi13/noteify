@@ -17,6 +17,7 @@
     "@remix-run/serve": "^2.9.2",
     "aos": "^2.3.4",
     "cal-sans": "^1.0.1",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "isbot": "^4.1.0",
     "lucide-react": "^0.381.0",
