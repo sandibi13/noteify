@@ -4,6 +4,7 @@ import { fontSans } from "~/lib/fonts";
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "~/components/theme-provider";
 import { cn } from "~/lib/utils";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
   title: "Noteify",
@@ -23,19 +24,24 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn("bg-background font-sans antialiased", fontSans.variable)}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={cn(
+            "bg-background font-sans antialiased",
+            fontSans.variable,
+          )}
         >
-          <div className="flex min-h-screen flex-col">{children}</div>
-        </ThemeProvider>
-      </body>
-    </html>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="flex min-h-screen flex-col">{children}</div>
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
